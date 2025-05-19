@@ -66,13 +66,7 @@ jobs:
       run: |
         docker push rmahviu2005/python-flask-admin:latest
         
-    # Ví dụ bước deploy tự động, bạn tùy chỉnh hoặc bỏ nếu chưa cần
-    - name: Deploy to Kubernetes
-      env:
-        KUBECONFIG: ${{ secrets.KUBECONFIG }}
-      run: |
-        kubectl apply -f k8s/deployment.yaml
-
+  
 # --- Kết thúc phần bổ sung Advanced CI/CD ---
 
 # Thêm bước đóng gói, kiểm tra bảo mật (scan), và triển khai tự động (deploy)
