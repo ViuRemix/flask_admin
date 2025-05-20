@@ -10,7 +10,7 @@ permissions:
   contents: read
 
 env:
-  IMAGE_NAME: yourdockerhub/flask-admin
+  IMAGE_NAME: rmahviu2005/flask-admin 
 
 jobs:
   build-and-deploy:
@@ -50,7 +50,6 @@ jobs:
         push: true
         tags: ${{ env.IMAGE_NAME }}:latest
 
-    # trên khai trên CD trên Kubernetes 
     - name: Deploy to Kubernetes
       if: ${{ always() }}
       run: |
