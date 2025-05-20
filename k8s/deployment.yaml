@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-admin
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flask-admin
+  template:
+    metadata:
+      labels:
+        app: flask-admin
+    spec:
+      containers:
+      - name: flask-admin
+        image: yourdockerhub/flask-admin:latest
+        ports:
+        - containerPort: 5000
+
+
+
+#  Test và chạy
+# docker build -t flask-admin . → test local
+
+# kubectl apply -f k8s/ → deploy lên Kubernetes
+
+# kiểm tra 
+# kubectl get pods
