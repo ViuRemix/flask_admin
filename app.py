@@ -26,7 +26,7 @@ admin.add_view(ModelView(User, db.session))
 # Thêm route chính trang chủ
 @app.route('/')
 def index():
-    return '<h1>Chào mừng đến với hệ thống quản lý thư viện!</h1><p>Truy cập <a href="/admin">/admin</a> để vào trang quản trị.</p>'
+    return '<h1>Chào mừng đến với hệ thống quản lý thư viện!</h1><p> Truy cập <a href="/admin">/admin</a> để vào trang quản trị.</p>'
 
 if __name__ == "__main__":
     with app.app_context():
