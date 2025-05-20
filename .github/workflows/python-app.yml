@@ -65,12 +65,15 @@ jobs:
       run: |
         docker push rmahviu2005/python-flask-admin:latest
         # --- chạy CD ---
-    - name: Setup kubeconfig file
+    - name: Setup kubeconfig file 
       run: |
         mkdir -p $HOME/.kube
         echo "${{ secrets.KUBECONFIG_CONTENT }}" > $HOME/.kube/config
         chmod 600 $HOME/.kube/config
-        
+    - name: Deploy to Kubernetes
+      run: |
+        kubectl apply -f k8s/
+
   
 # --- Kết thúc phần bổ sung Advanced CI/CD ---
 
