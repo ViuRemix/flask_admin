@@ -23,6 +23,11 @@ admin = Admin(app, name="Quản lý thư viên", template_mode="bootstrap3")
 admin.add_view(ModelView(Book, db.session))
 admin.add_view(ModelView(User, db.session))
 
+# Thêm route chính trang chủ
+@app.route('/')
+def index():
+    return '<h1>Chào mừng đến với hệ thống quản lý thư viện!</h1><p> Truy cập <a href="/admin">/admin</a> để vào trang quản trị.</p>'
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
 
