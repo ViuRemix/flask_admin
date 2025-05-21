@@ -26,4 +26,5 @@ spec:
 # kubectl apply -f k8s/ → deploy lên Kubernetes
 
 # kiểm tra 
+
 # kubectl get pods
